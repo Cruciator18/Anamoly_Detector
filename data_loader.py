@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader, Dataset
 
 
 root_dir = r"mvtec_anomaly_detection"
-category = r"metal_nut"
+category = "metal_nut"
 BATCH_SIZE = 32
 
 
