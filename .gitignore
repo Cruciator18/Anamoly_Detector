@@ -2,4 +2,7 @@
 
 mvtec_anomaly_detection
 
+
+cnn_lstm_anomaly_detector.pth
+
 __pycache__
