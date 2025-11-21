@@ -5,13 +5,11 @@ This project implements a hybrid deep learning architecture for anomaly detectio
  ### 1. The CNN (ResNet18)
  ### Role: Spatial Feature Extractor
  ### Usage:  
- We use a ResNet18 pre-trained on ImageNet. The weights are frozen, meaning we do not retrain the CNN. It simply converts raw pixels (high dimensionality) into a compact, meaningful feature vector (512 dimensions).Why? Pre-trained CNNs are excellent at identifying edges, textures, and shapes without needing massive custom datasets.
+ We use a ResNet18 pre-trained on ImageNet. The weights are frozen, meaning we do not retrain the CNN. It simply converts raw pixels (high dimensionality) into a compact, meaningful feature vector (512 dimensions).Beacuse , Pre-trained CNNs are excellent at identifying edges, textures, and shapes without needing massive custom datasets.
  ### 2. The LSTM (Long Short-Term Memory)
  ### Role: Latent Representation Learner / Autoencoder 
  ### Usage:
- The extracted CNN features are passed into the LSTM layers. The LSTM compresses this information and attempts to reconstruct the original CNN feature vector via a linear decoder.  
- Why?  
- While typically used for time-series, using an LSTM here allows the model to learn the "context" of the feature space. It also makes the architecture future-proof if you decide to switch from static images to video sequences (temporal anomaly detection).
+ The extracted CNN features are passed into the LSTM layers. The LSTM compresses this information and attempts to reconstruct the original CNN feature vector via a linear decoder.While typically used for time-series, using an LSTM here allows the model to learn the "context" of the feature space. It also makes the architecture future-proof if you decide to switch from static images to video sequences (temporal anomaly detection).
 
 ## Configuration & Hyperparameters 
 ### Model Configuration
@@ -38,6 +36,7 @@ The script prints the Average Loss per epoch.Upon completion, the model weights 
 ##  Inference Strategy (How to detect anomalies):
 Once trained, use the model to detect anomalies as follows:
 Pass a new image through the model -> Calculate the MSE Loss between the original_features and reconstructed_features -> Thresholding: If the Loss > Threshold, the image is an Anomaly. If Loss < Threshold, it is Normal.
+
 
 
 
