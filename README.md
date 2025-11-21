@@ -28,5 +28,9 @@ This project implements a hybrid deep learning architecture for anomaly detectio
 Run the training script. The model will automatically download ResNet weights (if not present) and begin training on your dataset.
 `python train.py`
 ### Output:
-The script prints the Average Loss per epoch.Upon completion, the model weights are saved to: cnn_lstm_anomaly_detector.pth📊 Inference Strategy (How to detect anomalies)Once trained, use the model to detect anomalies as follows:Pass a new image through the model.Calculate the MSE Loss between the original_features and reconstructed_features.Thresholding: If the Loss > Threshold, the image is an Anomaly. If Loss < Threshold, it is Normal.
+The script prints the Average Loss per epoch.Upon completion, the model weights are saved to: cnn_lstm_anomaly_detector.pth
+##  Inference Strategy (How to detect anomalies):
+Once trained, use the model to detect anomalies as follows:
+Pass a new image through the model -> Calculate the MSE Loss between the original_features and reconstructed_features -> Thresholding: If the Loss > Threshold, the image is an Anomaly. If Loss < Threshold, it is Normal.
+
 
