@@ -21,9 +21,13 @@ This project implements a hybrid deep learning architecture for anomaly detectio
 | **Learning Rate** | 0.001 | Step size for Adam Optimizer |
 | **Input Shape** | (3, 224, 224) | Resized image dimensions |
 | **Device** | CUDA (GPU) | Hardware acceleration used |
-## 🚀 How to Run
+##  How to Run
 ### Install Dependencies:
 `pip install torch torchvision numpy`
+
+### Download the dataset:
+Download the dataset from `https://www.mvtec.com/company/research/datasets/mvtec-ad`
+
 ### Start Training:
 Run the training script. The model will automatically download ResNet weights (if not present) and begin training on your dataset.
 `python train.py`
@@ -32,5 +36,6 @@ The script prints the Average Loss per epoch.Upon completion, the model weights 
 ##  Inference Strategy (How to detect anomalies):
 Once trained, use the model to detect anomalies as follows:
 Pass a new image through the model -> Calculate the MSE Loss between the original_features and reconstructed_features -> Thresholding: If the Loss > Threshold, the image is an Anomaly. If Loss < Threshold, it is Normal.
+
 
 
