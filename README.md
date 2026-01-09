@@ -37,7 +37,7 @@ The script prints the Average Loss per epoch.Upon completion, the model weights 
 Once trained, use the model to detect anomalies as follows:
 Pass a new image through the model -> Calculate the MSE Loss between the original_features and reconstructed_features -> Thresholding: If the Loss > Threshold, the image is an Anomaly. If Loss < Threshold, it is Normal.
 ### Example
-Inference result...  
+1) Inference result...  
 
 Image : grid\test\broken\005.png  
 
@@ -46,7 +46,19 @@ Anomaly score : 0.31921130418777466
  
 Threshold value : 0.21  
 
-Anomaly detected
+Anomaly detected  
+
+2)Inference result...  
+
+Image : C:\anomaly_docker\Anamoly_Detector\screw\test\good\008.png  
+
+Anomaly score : 0.06236432492733002  
+
+Threshold value : 0.21  
+
+Normal
+
+
 
 
 
